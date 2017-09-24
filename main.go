@@ -195,6 +195,11 @@ const exampleHTML = `
 			text-align: center;
 		}
 
+		p {
+			font-size: 16px;
+			text-align: center;
+		}
+
 		li {
 			font-size: 15px;
 			padding-bottom: 10px;
@@ -206,6 +211,10 @@ const exampleHTML = `
 			padding: 0 0 0 40px;
 		}
 
+		.stamps > * {
+			padding: 3px 0;
+		}
+
 		.info {
 			width: 600px;
 			margin: 40px auto;
@@ -214,6 +223,7 @@ const exampleHTML = `
 </head>
 <body>
 <h1>Immutable</h1>
+<p>Best to test over https and a browser that supports "immutable" like Firefox.</p>
 <div class="stamps">
 	<div id="html-timestamp">%s&nbsp;&nbsp;html</div>
 	<div id="immutable-timestamp">&nbsp;&nbsp;immutable</div>
