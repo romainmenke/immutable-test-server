@@ -224,6 +224,7 @@ const exampleHTML = `
 <body>
 <h1>Immutable</h1>
 <p>Best to test over https and a browser that supports "immutable" like Firefox.</p>
+<p><a href="https://github.com/romainmenke/immutable-test-server" target="_blank">code</a></p>
 <div class="stamps">
 	<div id="html-timestamp">%s&nbsp;&nbsp;html</div>
 	<div id="immutable-timestamp">&nbsp;&nbsp;immutable</div>
