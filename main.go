@@ -63,7 +63,7 @@ func immutableAndEtag() http.Handler {
 				return
 			}
 
-			w.Header().Set("Cache-Control", "max-age=10, must-revalidate, immutable")
+			w.Header().Set("Cache-Control", "max-age=30, must-revalidate, immutable")
 			w.Header().Set("Age", "0")
 			w.Header().Set("Date", time.Now().Format(http.TimeFormat))
 			w.Header().Set("Content-Type", "text/css")
@@ -134,7 +134,7 @@ func etagAndImmutable() http.Handler {
 
 func maxAge() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Cache-Control", "max-age=10")
+		w.Header().Set("Cache-Control", "max-age=30")
 		w.Header().Set("Age", "0")
 		w.Header().Set("Date", time.Now().Format(http.TimeFormat))
 		w.Header().Set("Content-Type", "text/css")
@@ -148,7 +148,7 @@ func maxAge() http.Handler {
 
 func maxAgeAndImmutable() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Cache-Control", "max-age=10, immutable")
+		w.Header().Set("Cache-Control", "max-age=30, immutable")
 		w.Header().Set("Age", "0")
 		w.Header().Set("Date", time.Now().Format(http.TimeFormat))
 		w.Header().Set("Content-Type", "text/css")
@@ -192,11 +192,11 @@ const exampleHTML = `
 </head>
 <body>
 <a href="/">back</a>
-<div id="html-timestamp">%s:&nbsp;html</div>
-<div id="etag-timestamp">:&nbsp;etag</div>
-<div id="etag-and-immutable-timestamp">:&nbsp;etag and immutable</div>
-<div id="max-age-timestamp">:&nbsp;max-age</div>
-<div id="max-age-and-immutable-timestamp">:&nbsp;max-age and immutable</div>
-<div id="immutable-timestamp">:&nbsp;immutable</div>
+<div id="html-timestamp">%s&nbsp;&nbsp;html</div>
+<div id="etag-timestamp">&nbsp;&nbsp;etag</div>
+<div id="etag-and-immutable-timestamp">&nbsp;&nbsp;etag and immutable</div>
+<div id="max-age-timestamp">&nbsp;&nbsp;max-age</div>
+<div id="max-age-and-immutable-timestamp">&nbsp;&nbsp;max-age and immutable</div>
+<div id="immutable-timestamp">&nbsp;&nbsp;immutable</div>
 </body>
 `
